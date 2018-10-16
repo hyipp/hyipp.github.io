@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Cleaning</title>
+	<link rel="stylesheet" href="site.css">
+	<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<div class="container">
+        <div class="calculator">
+            <div class="typeButtons">
+                <input type="button" class="type flat" onclick="return false;" value="Квартира" />
+                <input type="button" class="type office" onclick="return false;" value="Офис" />
+                <input type="button" class="type house" onclick="return false;" value="Коттедж" />
+            </div>
+            <div class="sliders">
+                <div class="flat-container">
+                    <div id="flat-slider"> </div>
+                    <p>
+                        <label for="flat-amount">Кол-во комнат</label>
+                        <input type="text" name="RoomAmount" id="flat-amount" readonly>
+                    </p>
+                </div>
+
+                <div class="office-container">
+                    <div id="office-slider"> </div>
+                    <p>
+                        <label for="office-amount">Квадратных метров</label>
+                        <input type="text" name="Square" id="office-amount" readonly>
+                    </p>
+                </div>
+                <div class="house-container">
+                    <div id="house-slider"> </div>
+                    <p>
+                        <label for="house-amount">Квадратных метров</label>
+                        <input type="text" name="Square" id="house-amount" readonly>
+                    </p>
+                    <div id="bath-slider"> </div>
+                    <p>
+                        <label for="bath-amount">Ванных комнат</label>
+                        <input type="text" name="BathAmount" id="bath-amount" readonly>
+                    </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="periods">
+                <input type="button" class="period oneTime" onclick="return false;" value="Разовая" />
+
+                <div class="period-wrapper">
+                    <input type="button" class="period everyWeek" onclick="return false;" value="Каждую неделю" />
+                    <label for="everyWeek">скидка -20%</label>
+                </div>
+                <div class="period-wrapper">
+                    <input type="button" class="period every2Weeks" onclick="return false;" value="Каждые 2 недели" />
+                    <label for="everyWeek">скидка -15%</label>
+                </div>
+                <div class="period-wrapper">
+                    <input type="button" class="period every4Weeks" onclick="return false;" value="Каждые 4 недели" />
+                    <label for="everyWeek">скидка -10%</label>
+                </div>
+            </div>
+            <div class="types">
+                <input type="button" class="type simple" onclick="return false;" value="Простая" />
+                <input type="button" class="type standart" onclick="return false;" value="Стандартная" />
+                <input type="button" class="type super" onclick="return false;" value="Генеральная" />
+            </div>
+            <br />
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <input type="hidden" name="Periodicity" id="periodHandler" />
+            <input type="hidden" name="RoomType" id="roomTypeHandler" />
+            <input type="hidden" name="Type" id="cleanTypeHandler" />
+            <input type="text" name="Price" id="total" readonly />
+
+            <br />
+            <input type="submit" id="totalbutton" name="Price" value="Оформить сейчас" />
+        </div>
+</div>
+
+	<script src="js/slider.js"></script>
+</body>
+</html>
